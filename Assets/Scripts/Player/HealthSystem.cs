@@ -11,6 +11,7 @@ public class HealthSystem : MonoBehaviour
     [SerializeField] private UnityEvent OnDamaged;
     [SerializeField] private UnityEvent OnZero;
     [SerializeField] private UnityEvent XDeathState; //Gibs
+    public AudioSource hurtSound;
     public AudioSource dieSound;
     private Animator _animator;
     private AnimatorClipInfo[] _animatorinfo;
@@ -21,6 +22,7 @@ public class HealthSystem : MonoBehaviour
     public void Damage(int hpAmount)
     {
         hp -= hpAmount;
+        hurtSound.Play();
         Debug.Log("hp amount changed by " + hpAmount + " and is now " + hp);
         
         OnDamaged?.Invoke();
