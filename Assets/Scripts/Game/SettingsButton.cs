@@ -7,6 +7,6 @@ public class SettingsButton : MonoBehaviour
 {
     public void SettingsScene()
     {
-        SceneManager.LoadScene("Settings");
+        SceneManager.LoadScene("Credits");
     }
 }
